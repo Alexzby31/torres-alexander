@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Palíndromos de Doble Base</title>
+    <script>
+        function esPalindromoDobleBase(numero) {
+            // Verificar si el número es un palíndromo en base 10
+            const numeroStr = numero.toString();
+            const numeroReverso = numeroStr.split('').reverse().join('');
+            const esPalindromoBase10 = numeroStr === numeroReverso;
+
+            // Si no es un palíndromo en base 10, retornar false
+            if (!esPalindromoBase10) {
+                return false;
+            }
+
+            // Convertir el número a base 2
+            const numeroBinario = numero.toString(2);
+
+            // Verificar si el número convertido a base 2 es un palíndromo
+            const numeroBinarioReverso = numeroBinario.split('').reverse().join('');
+            const esPalindromoBase2 = numeroBinario === numeroBinarioReverso;
+
+            // Retornar true si es un palíndromo en base 2, de lo contrario false
+            return esPalindromoBase2;
+        }
+
+        function verificarPalindromo() {
+            const numero = parseInt(document.getElementById('numero').value);
+            const resultado = esPalindromoDobleBase(numero);
+
+            document.getElementById('resultado').innerText = resultado ? 'Es un palíndromo de doble base.' : 'No es un palíndromo de doble base.';
+        }
+    </script>
+</head>
+<body>
+    <h1>Verificador de Palíndromos de Doble Base</h1>
+    <label for="numero">Ingrese un número:</label>
+    <input type="text" id="numero">
+    <button onclick="verificarPalindromo()">Verificar</button>
+    <p id="resultado"></p>
+</body>
+</html>
+

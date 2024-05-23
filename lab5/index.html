@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guardar usuario y color en hexadecimal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ingrese su nombre y un color en hexadecimal:</h1>
+  <form id="formulario">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+    <label for="color">Color en hexadecimal:</label>
+    <input type="text" id="color" name="color" pattern="^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" required>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <div id="resultado" style="margin-top: 20px;"></div>
+
+  <script src="moduloFormulario.js" type="module"></script>
+  <script src="moduloLocalStorage.js" type="module"></script>
+  <script src="moduloResultado.js" type="module"></script>
+</body>
+</html>

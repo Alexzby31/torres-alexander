@@ -1,0 +1,87 @@
+/* Resetear estilos predeterminados */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Color de fondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #4b0082; /* Color de texto general */
+}
+
+/* Contenedor principal */
+section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Ancho máximo del contenedor */
+    width: 100%;
+}
+
+/* Encabezado */
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Etiqueta del campo de entrada */
+label {
+    margin-bottom: 5px;
+}
+
+/* Campos de entrada */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Botón de envío */
+input[type="submit"],
+button#logout {
+    padding: 10px;
+    background-color: #800080; /* Color de fondo del botón (púrpura) */
+    color: #fff; /* Color del texto del botón */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+input[type="submit"]:hover,
+button#logout:hover {
+    background-color: #6a0dad; /* Color de fondo del botón al pasar el ratón */
+}
+
+/* Enlace */
+p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+a {
+    color: #800080; /* Color del enlace (púrpura) */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; /* Subrayar enlace al pasar el ratón */
+}

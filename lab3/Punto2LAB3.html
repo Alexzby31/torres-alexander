@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Caracteres</title>
+    <script>
+        function contarCaracteres(cadena) {
+            const contador = {};
+            // Iterar sobre cada caracter de la cadena
+            for (let caracter of cadena) {
+                // Incrementar el contador para este caracter
+                contador[caracter] = (contador[caracter] || 0) + 1;
+            }
+            return contador;
+        }
+
+        function mostrarConteo() {
+            const cadena = document.getElementById('cadena').value;
+            const conteo = contarCaracteres(cadena);
+
+            // Mostrar el resultado en el elemento con id "resultado"
+            const resultadoElemento = document.getElementById('resultado');
+            resultadoElemento.innerHTML = '<h3>Conteo de caracteres:</h3>';
+            for (let caracter in conteo) {
+                resultadoElemento.innerHTML += `${caracter}: ${conteo[caracter]}<br>`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Contador de Caracteres</h1>
+    <label for="cadena">Ingrese una cadena:</label>
+    <input type="text" id="cadena">
+    <button onclick="mostrarConteo()">Contar</button>
+    <div id="resultado"></div>
+</body>
+</html>

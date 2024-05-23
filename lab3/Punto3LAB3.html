@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Año Bisiesto</title>
+    <script>
+        function esBisiesto(anio) {
+            if ((anio % 4 === 0 && anio % 100 !== 0) || anio % 400 === 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function verificarBisiesto() {
+            const anio = parseInt(document.getElementById('anio').value);
+            const esBisiestoResultado = esBisiesto(anio);
+
+            document.getElementById('resultado').innerText = esBisiestoResultado ? 'Es un año bisiesto.' : 'No es un año bisiesto.';
+        }
+    </script>
+</head>
+<body>
+    <h1>Verificador de Año Bisiesto</h1>
+    <label for="anio">Ingrese un año:</label>
+    <input type="text" id="anio">
+    <button onclick="verificarBisiesto()">Verificar</button>
+    <p id="resultado"></p>
+</body>
+</html>
