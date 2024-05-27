@@ -5,15 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <title>Home</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Recuperar el nombre de usuario almacenado
+            const userlogin = JSON.parse(localStorage.getItem('login_success')) || [];
+
+            // Verificar si el usuario está logueado
+            if (userlogin) {
+                // Mostrar el nombre de usuario en algún elemento HTML (por ejemplo, un párrafo)
+                document.getElementById('username').textContent = userlogin.username;
+            } else {
+                // Si el usuario no está logueado, redirigirlo a la página de inicio de sesión
+                window.location.href = 'login.html'; // Cambia 'login.html' por la ruta de tu página de inicio de sesión
+            }
+        });
+    </script>
+    <style>
+        /* Estilos adicionales para el contenedor principal */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Opcional: centra los elementos horizontalmente */
+        }
+
+        /* Estilos para la barra de navegación */
+        .menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #f0f0f0;
+            width: 100%;
+            display: flex;
+            justify-content: center; /* Centra los elementos horizontalmente */
+        }
+
+        .menu li {
+            float: left;
+        }
+
+        .menu li a {
+            display: block;
+            color: #4b0082;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .menu li a:hover {
+            background-color: #ddd;
+        }
+    </style>
 </head>
 <body>
-    <section>
-        <h1>Home</h1>
-        <button id="logout">Logout</button>
-    </section>
-    <section>
-        <p>Quieres cambiar tu nombre y/o contrasena ? <a href="perfil.html">Perfil</a></p>
-    </section>
+    <div class="container"> <!-- Contenedor principal -->
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tabla.html">Tabla</a></li> <!-- Agregamos el enlace a la tabla -->
+        </ul>
+        <section>
+            <h1>Home</h1>
+            <button id="logout">Logout</button>
+            <p>Bienvenido, <span id="username"></span>!</p>
+        </section>
+        <section>
+            <p>Quieres cambiar tu nombre y/o contraseña? <a href="perfil.html">Perfil</a></p>
+        </section>
+    </div>
     <script src="js/index.js"></script>
 </body>
 </html>
+

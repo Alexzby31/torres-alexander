@@ -9,53 +9,55 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0; /* Color de fondo */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     color: #4b0082; /* Color de texto general */
 }
 
 /* Contenedor principal */
 section {
-    background-color: #fff;
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin: 20px auto; /* Centrar el contenedor y agregar un margen */
     padding: 20px;
+    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 400px; /* Ancho máximo del contenedor */
-    width: 100%;
 }
 
 /* Encabezado */
 h1, h2 {
     text-align: center;
     margin-bottom: 20px;
+    color: #800080; /* Color del encabezado (púrpura) */
 }
 
 /* Formulario */
 form {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 /* Etiqueta del campo de entrada */
 label {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 /* Campos de entrada */
 input[type="text"],
-input[type="email"],
-input[type="password"] {
+input[type="number"],
+select {
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    width: calc(100% - 22px); /* Ajuste para compensar el ancho del borde */
+    max-width: 300px; /* Ancho máximo para los campos de entrada */
 }
 
 /* Botón de envío */
 input[type="submit"],
-button#logout {
+button#logout,
+button[type="submit"] {
     padding: 10px;
     background-color: #800080; /* Color de fondo del botón (púrpura) */
     color: #fff; /* Color del texto del botón */
@@ -64,10 +66,13 @@ button#logout {
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 100%;
+    max-width: 200px; /* Ancho máximo del botón */
+    margin: 0 auto 15px; /* Centrar el botón y agregar margen inferior */
 }
 
 input[type="submit"]:hover,
-button#logout:hover {
+button#logout:hover,
+button[type="submit"]:hover {
     background-color: #6a0dad; /* Color de fondo del botón al pasar el ratón */
 }
 
@@ -86,3 +91,22 @@ a:hover {
     text-decoration: underline; /* Subrayar enlace al pasar el ratón */
 }
 
+/* Estilos para la tabla */
+table {
+    width: 100%; /* Hacer que la tabla ocupe todo el ancho disponible */
+    border-collapse: collapse; /* Colapsar los bordes de la tabla */
+    margin-top: 20px; /* Margen superior */
+}
+
+/* Estilos para las celdas de la tabla */
+th, td {
+    border: 1px solid #ccc; /* Borde de las celdas */
+    padding: 10px; /* Espaciado interno de las celdas */
+    text-align: left; /* Alinear el texto a la izquierda */
+}
+
+/* Estilos para el encabezado de la tabla */
+th {
+    background-color: #800080; /* Color de fondo del encabezado */
+    color: #fff; /* Color del texto del encabezado */
+}

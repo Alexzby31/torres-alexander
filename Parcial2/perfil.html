@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Perfil</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfil de Usuario</title>
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <section>
-        <h2>Perfil</h2>
-        <form id="perfilForm">
-            <label >Nombre</label>
-            <input type="text" placeholder="..." id = "name" required autofocus>
-            <label >Password</label>
-            <input type="password" placeholder="..." id ="password" required>
-            <input type="submit" value="Editar">
-        </form>
-        <p>Regresar al Home  <a href="index.html">Home</a></p>
-    </section>
-    <script src="js/perfil.js"></script>
+
+<section>
+    <h2>Perfil de Usuario</h2>
+    <form id="profile-form">
+        <label for="username">Nombre de Usuario:</label>
+        <input type="text" id="username" name="username" placeholder="Nuevo nombre de usuario"><br>
+
+        <label for="new-password">Nueva Contraseña:</label>
+        <input type="password" id="new-password" name="new-password" placeholder="Nueva contraseña"><br>
+
+        <label for="confirm-password">Confirmar Contraseña:</label>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirmar contraseña"><br>
+
+        <input type="submit" value="Guardar Cambios">
+    </form>
+    <p><a href="index.html">Regresar a la página de inicio</a></p>
+</section>
+
+<script src="js/perfil.js"></script>
+
 </body>
 </html>
+

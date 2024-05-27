@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Entradas y Salidas</title>
+    <link rel="stylesheet" href="css/tabla.css">
+</head>
+<body>
+    <h1>Registro de Entradas y Salidas de Dinero</h1>
+
+    <!-- Formulario para ingresar entradas y salidas de dinero -->
+    <form id="moneyForm">
+        <label for="amount">Cantidad:</label>
+        <input type="text" id="amount" name="amount"  pattern="\d+(\.\d{1,2})?" title="Ingrese un número con hasta dos decimales" required>
+        <br>
+        <label for="type">Tipo:</label>
+        <select id="type" name="type" required>
+            <option value="entrada">Entrada</option>
+            <option value="salida">Salida</option>
+        </select>
+        <br>
+        <button type="submit">Registrar</button>
+    </form>
+
+    <h2>Registros</h2>
+
+    <!-- Tabla para mostrar el registro actual -->
+    <table id="moneyTable">
+        <thead>
+            <tr>
+                <th>Cantidad</th>
+                <th>Tipo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se agregarán las filas dinámicamente con JavaScript -->
+        </tbody>
+    </table>
+
+    <canvas id="moneyChart" width="400" height="400"></canvas>
+
+    <!-- Enlace para volver a la página de inicio -->
+    <p><a href="index.html">Volver a la página de inicio</a></p>
+    
+    <script src="js/grafico.js"></script>
+    <script src="js/tabla.js"></script>
+</body>
+</html>
+

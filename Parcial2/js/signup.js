@@ -1,19 +1,3 @@
-// Función hashCode
-function hashCode(str) {
-   let hash = 0;
-   for (let i = 0, len = str.length; i < len; i++) {
-       let chr = str.charCodeAt(i);
-       hash = (hash << 5) - hash + chr;
-       hash |= 0; // Convert to 32bit integer
-   }
-   return hash;
-}
-
-// Función para hashear la contraseña
-function hashPassword(password) {
-   return hashCode(password).toString();
-}
-
 // Obtener referencia al formulario de registro
 const signupForm = document.querySelector('#signupForm');
 
@@ -50,3 +34,19 @@ signupForm.addEventListener('submit', (e) => {
    // Redirigir a la página de inicio de sesión
    window.location.href = 'login.html';
 });
+
+// Función hashCode
+function hashCode(str) {
+   let hash = 0;
+   for (let i = 0, len = str.length; i < len; i++) {
+       let chr = str.charCodeAt(i);
+       hash = (hash << 5) - hash + chr;
+       hash |= 0; // Convert to 32bit integer
+   }
+   return hash;
+}
+
+// Función para hashear la contraseña
+function hashPassword(password) {
+   return hashCode(password).toString();
+}
