@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Número Entero Positivo</title>
+    <style>
+        /* Estilos CSS */
+        .card {
+            position: relative;
+            display: inline-block;
+            border: 1px solid #ccc;
+            padding: 16px;
+            margin: 10px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            border-radius: 4%;
+        }
+
+        .card:hover {
+            background-color: #e0e0e0;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+        img {
+            border-radius: 4px 4px 0 0;
+        }
+
+        body {
+            background-color: #fff;
+            padding: 0 16px 0 16px;
+            font-family: 'Times New Roman', Times, serif,'Courier New', Courier, monospace;
+        }
+
+        .box {
+            background-color: #ececec ;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            border-radius: 4px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        #formulario {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-left: 24px;
+            margin-bottom: 16px;
+        }
+
+        #numero {
+            width: 30%;
+        }
+
+        #calcular-button {
+            display: flex;
+            justify-content: flex-end;
+            background-color: brown;
+            color: white; 
+            float: right; 
+            border: none; 
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        #calcular-container {
+            text-align: right;
+            margin-right: 24px;
+        }
+
+        #resultado {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        /* Estilos para la alerta */
+        .alert {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(50%, -50%);
+            padding: 4px;
+            background-color: #8B0000; /* Rojo vino */
+            color: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            z-index: 1;
+        }
+
+        .alert::before {
+            content: "X";
+            font-size: 14px;
+            line-height: 14px;
+            display: block;
+            width: 14px;
+            height: 14px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenido HTML -->
+    <h1 class="body">Secuencia Fibonacci </h1>
+    <form action="#" method="post" id="formulario" class="box">
+        <label for="numero">Cantidad Elementos:</label><br>
+        <input type="number" id="numero" name="numero" min="0" required><br>
+        <div id="calcular-container">
+            <button type="submit" id="calcular-button">Calcular </button>
+        </div>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+        function crearTarjeta(numeroFib) {
+            const card = document.createElement("div");
+            card.className = "card";
+            card.textContent = `${numeroFib}`;
+            
+            // Agregar evento de clic a la tarjeta para mostrar la alerta
+            card.addEventListener("click", function() {
+                const alerta = document.createElement("div");
+                alerta.className = "alert";
+                
+                // Agregar evento de clic a la alerta para eliminar la tarjeta
+                alerta.addEventListener("click", function(event) {
+                    event.stopPropagation(); // Evitar que el clic en la alerta se propague a la tarjeta
+                    card.remove(); // Eliminar la tarjeta
+                    alerta.remove(); // Eliminar la alerta
+                });
+
+                card.appendChild(alerta); // Agregar la alerta a la tarjeta
+                alerta.style.display = "block"; // Mostrar la alerta
+            });
+
+            return card;
+        }
+
+        function calcularFibonacci(n) {
+            let fib = [0, 1];
+            for (let i = 2; i <= n; i++) {
+                fib[i] = fib[i - 1] + fib[i - 2];
+            }
+            return fib.slice(1);
+        }
+
+        document.getElementById("formulario").addEventListener("submit", 
+        async function(event) {
+            event.preventDefault();
+            const numero = document.getElementById("numero").value;
+            const payload = { numero };
+            //validar que sea positivo
+            //if (isNaN(numero) || numero < 0) {
+                //alert("Por favor, introduce un número entero positivo.");
+                //return;
+            //}
+
+            //backend
+
+                const rawResponse = await fetch('http://localhost:3000/', {
+                    method : 'POST',
+                    headers : {'Content-Type':'application/json' },
+                    body: JSON.stringify(payload),
+                });
+                const data = await rawResponse.json();
+                console.log(data);
+                //const fibSerie = calcularFibonacci(numero);
+                 const resultadoDiv = document.getElementById("resultado");
+                 resultadoDiv.innerHTML = "";
+
+                 data.forEach(function(numeroFib) {
+                 const card = crearTarjeta(numeroFib);
+                 resultadoDiv.appendChild(card);
+            });
+
+
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
