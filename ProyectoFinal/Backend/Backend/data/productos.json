@@ -1,0 +1,182 @@
+[
+    {
+        "id": "blusa",
+        "titulo": "blusa",
+        "imagen": "../img/mujeres/01.jpg",
+        "categoria": {
+            "nombre": "mujeres",
+            "id": "mujeres"
+        },
+        "precio": 1.00
+    },
+    {
+        "id": "camisa",
+        "titulo": "camisa",
+        "imagen": "../img/mujeres/02.jpg",
+        "categoria": {
+            "nombre": "mujeres",
+            "id": "mujeres"
+        },
+        "precio": 0.75
+    },
+    {
+        "id": "falda",
+        "titulo": "falda",
+        "imagen": "../img/mujeres/03.jpg",
+        "categoria": {
+            "nombre": "mujeres",
+            "id": "mujeres"
+        },
+        "precio": 1.25
+    },
+    {
+        "id": "pantalon",
+        "titulo": "pantalon",
+        "imagen": "../img/mujeres/04.jpg",
+        "categoria": {
+            "nombre": "mujeres",
+            "id": "mujeres"
+        },
+        "precio": 0.50
+    },
+    {
+        "id": "vestido",
+        "titulo": "vestido",
+        "imagen": "../img/mujeres/05.jpg",
+        "categoria": {
+            "nombre": "mujeres",
+            "id": "mujeres"
+        },
+        "precio": 2.00
+    },
+    {
+        "id": "camisa-tipica",
+        "titulo": "camisa-tipica",
+        "imagen": "../img/escolar/01.jpg",
+        "categoria": {
+            "nombre": "escolar",
+            "id": "escolar"
+        },
+        "precio": 1.00
+    },
+    {
+        "id": "camisa-celeste",
+        "titulo": "camisa-celeste",
+        "imagen": "../img/escolar/02.jpg",
+        "categoria": {
+            "nombre": "escolar",
+            "id": "escolar"
+        },
+        "precio": 0.75
+    },
+    {
+        "id": "camisa-blanca-mangalarga",
+        "titulo": "camisa-blanca-mangalarga",
+        "imagen": "../img/escolar/03.jpg",
+        "categoria": {
+            "nombre": "escolar",
+            "id": "escolar"
+        },
+        "precio": 1.25
+    },
+    {
+        "id": "camisa-dama-blanca",
+        "titulo": "camisa-dama-blanca",
+        "imagen": "../img/escolar/04.jpg",
+        "categoria": {
+            "nombre": "escolar",
+            "id": "escolar"
+        },
+        "precio": 1.00
+    },
+    {
+        "id": "camisa-dama-celeste",
+        "titulo": "camisa-dama-celeste",
+        "imagen": "../img/escolar/05.jpg",
+        "categoria": {
+            "nombre": "escolar",
+            "id": "escolar"
+        },
+        "precio": 1.00
+    },
+    {
+        "id": "falda-escolar",
+        "titulo": "falda-escolar",
+        "imagen": "../img/escolar/06.jpg",
+        "categoria": {
+            "nombre": "escolar",
+            "id": "escolar"
+        },
+        "precio": 0.75
+    },
+    {
+        "id": "pantalon-largo-escolar",
+        "titulo": "pantalon-largo-escolar",
+        "imagen": "../img/escolar/07.jpg",
+        "categoria": {
+            "nombre": "escolar",
+            "id": "escolar"
+        },
+        "precio": 1.00
+    },
+    {
+        "id": "polo-escolar",
+        "titulo": "polo-escolar",
+        "imagen": "../img/escolar/08.jpg",
+        "categoria": {
+            "nombre": "escolar",
+            "id": "escolar"
+        },
+        "precio": 0.50
+    },
+    {
+        "id": "camisa",
+        "titulo": "camisa",
+        "imagen": "../img/caballeros/01.jpg",
+        "categoria": {
+            "nombre": "caballeros",
+            "id": "caballeros"
+        },
+        "precio": 1.00
+    },
+    {
+        "id": "pantalon-tela",
+        "titulo": "pantalon-tela",
+        "imagen": "../img/caballeros/02.jpg",
+        "categoria": {
+            "nombre": "caballeros",
+            "id": "caballeros"
+        },
+        "precio": 1.50
+    },
+    {
+        "id": "saco",
+        "titulo": "saco",
+        "imagen": "../img/caballeros/03.jpg",
+        "categoria": {
+            "nombre": "caballeros",
+            "id": "caballeros"
+        },
+        "precio": 2.00
+    },
+    {
+        "id": "polo",
+        "titulo": "polo",
+        "imagen": "../img/caballeros/04.jpg",
+        "categoria": {
+            "nombre": "caballeros",
+            "id": "caballeros"
+        },
+        "precio": 0.75
+    },
+    {
+        "id": "jean",
+        "titulo": "jean",
+        "imagen": "../img/caballeros/05.jpg",
+        "categoria": {
+            "nombre": "caballeros",
+            "id": "caballeros"
+        },
+        "precio": 1.50
+    }
+]
